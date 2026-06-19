@@ -2,6 +2,7 @@
 :root {
   --font-inter: 'Inter';
   --font-press: 'PressStart2P';
+  --logo-font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   --main-color: #000;
   --bakground-color: #fff;
   --text-stroke-color: #FFFFFF;
