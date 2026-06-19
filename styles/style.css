@@ -101,7 +101,9 @@
   color: var(--main-color);
 }
 
-.conteiner_img-text{}
+.conteiner_img-text{
+  position: relative;
+}
 
 .section_decoration {
   position: absolute;
