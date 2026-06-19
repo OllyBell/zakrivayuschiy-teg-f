@@ -14,7 +14,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--font-inter);
-  font-variation-settings: 'wght' 410;
+  font-variation-settings: 'wght' 400;
   background-image: var(--background-gradient);
   background-size: cover;
   background-attachment: fixed; /* Фиксирует фон при прокрутке */
@@ -42,7 +42,7 @@
 }
 
 .logo-group {
-  padding: clamp(7.625rem, 7.0481rem + 2.4615vw, 8.125rem);
+  padding: clamp(7.625rem, 7.0481rem + 2.4615vw, 8.125rem) 0;
   display: grid;
   gap: 20px;
   justify-content: center;
@@ -53,7 +53,8 @@
   font-style: normal;
   font-weight: 400;
   justify-self: center; 
-  font-size: clamp(49px, 4.5vw, 65px);
+  font-size: clamp(7.625rem, 7.0481rem + 2.4615vw, 8.125rem);
+  /* font-size: clamp(49px, 4.5vw, 65px); */
   /* font-size: clamp(7.625rem, 7.0481rem + 2.4615vw, 8.125rem); */
   /* font-size: clamp(49px, calc(30,538461538px + 30,538461538px * 100vw), 65px); */
   /* font-size: 65px; */
@@ -86,15 +87,74 @@
   display: grid;
   gap: 50px;
 }
+.section {}
 
 .section-title {
   box-sizing: border-box;
   border: 2px solid var(--main-color);
   background-color: var(--bakground-color);
-  font-family: 'Inter';
   font-style: normal;
-  font-weight: 715;
+  font-variation-settings: 'wght' 715;
+  /* font-weight: 715; */
   font-size: 18px;
   line-height: 22px;
   color: var(--main-color);
+}
+
+.conteiner_img-text{}
+
+.section_decoration {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-family: var(--font-press), sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: var(--main-color);
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  text-shadow: 
+    -1px -1px 0 var(--text-stroke-color),
+     1px -1px 0 var(--text-stroke-color),
+    -1px  1px 0 var(--text-stroke-color),
+     1px  1px 0 var(--text-stroke-color);
+}
+
+@supports((text-stroke: 1px var(--text-stroke-color)) or (-webkit-text-stroke: 1px var(--text-stroke-color))) {
+  .section_decoration {
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+    text-stroke: 1px var(--text-stroke-color);
+    text-shadow: none;
+  }
+} 
+
+.section_img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: block;
+}
+
+.section_block-text {
+  border: 2px solid var(--main-color);
+  background-color: var(--bakground-color);
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.section-text {
+  font-style: normal;
+  font-variation-settings: 'wght' 410;
+  font-size: 18px;
+  line-height: 21px;
+  color: var(--main-color);
+}
+
+.button_like {
+  align-self: flex-end;
 }
