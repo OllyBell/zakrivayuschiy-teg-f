@@ -93,7 +93,6 @@
   display: grid;
   gap: 50px;
 }
-.section {}
 
 .section-title {
   box-sizing: border-box;
@@ -108,7 +107,7 @@
   padding: 4px 10px;
 }
 
-.conteiner_img-text{
+.conteiner_img-text {
   position: relative;
 }
 
@@ -287,9 +286,6 @@
   animation: change-opacity 0.3s 0.3s ease-in;
 }
 
-
-.heart {}
-
 .card__like-button {
   padding: 12.5px 37px;
   box-sizing: border-box;
@@ -380,7 +376,7 @@
   justify-content: center;
 }
 
-.button-save{
+.button-save {
   display: flex;
   align-items: center;
   justify-self: center;
