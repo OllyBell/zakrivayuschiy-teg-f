@@ -388,6 +388,7 @@
   text-align: center;
   cursor: pointer;
   max-inline-size: 335px;
+  color: var(--changing-color);
   /* max-block-size: 55px; */
 }
 
