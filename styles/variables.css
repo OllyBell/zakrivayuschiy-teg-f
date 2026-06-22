@@ -5,7 +5,10 @@
   --logo-font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   --main-color: #000;
   --bakground-color: #fff;
+  --changing-color: #fff;
   --text-stroke-color: #FFFFFF;
+  --animation-fill-color: rgb(255 0 0);
+  --contour-color: #000;
   --background-gradient: repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
     repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
     linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);

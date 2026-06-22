@@ -80,7 +80,7 @@
   font-family: var(--font-press), sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: clamp(14px, 1.67vw, 23px);
+  font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);;
   /* font-size: clamp(7.625rem, 7.0481rem + 2.4615vw, 8.125rem);  */
   /* font-size: 23px; */
   /* line-height: 65px; */
@@ -105,6 +105,7 @@
   font-size: 18px;
   line-height: 22px;
   color: var(--main-color);
+  padding: 4px 10px;
 }
 
 .conteiner_img-text{
@@ -143,6 +144,39 @@
   width: 100%;
   aspect-ratio: 1 / 1;
   display: block;
+  object-fit: cover;
+}
+
+.filter_prepare {
+  filter: drop-shadow(30px 6px 13px rgba(0, 0, 0, 0.8));
+}
+
+.filter_clean-page {
+  filter: contrast(120%) brightness(150%);
+}
+
+.filter_cry {
+  filter: saturate(158%);
+}
+
+.filter_ideal {
+  filter: saturate(200%);
+}
+
+.filter_near {
+  filter: sepia(60%);
+}
+
+.filter_strategy {
+  filter: hue-rotate(-60deg);
+}
+
+.filter_hands-down {
+  filter: opacity(0.6);
+}
+
+.filter_now {
+  filter: contrast(120%) grayscale(0.8);
 }
 
 .section_block-text {
@@ -165,11 +199,94 @@
 
 .button_like {
   align-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
 }
 
-.card__icon-button {}
+.card__icon-button {
+  background-color: transparent;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+  /* max-block-size: 38px; */
+}
 
-.like-icon {}
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--main-color);
+}
+
+.like-icon {
+  transform-origin: center;
+  cursor: pointer;
+}
+
+.like-icon .sparks {
+  opacity: 0;
+}
+
+.like-icon .contour {
+  fill: var(--contour-color);
+  transition: fill 0.1s linear;
+}
+
+.like-icon .core {
+  fill: transparent;
+  transition: fill 0.3s 0.03s linear;
+}
+
+.like-icon .main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .core {
+  fill: var(--contour-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--contour-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon:active .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked {
+  animation: change-scale 0.3s 0.1s ease-in;
+}
+
+.like-icon.is-liked .sparks {
+  animation: change-opacity 0.3s 0.3s ease-in;
+}
+
 
 .heart {}
 
@@ -182,6 +299,66 @@
   cursor: pointer;
 }
 
+/* .button-effect {
+  overflow: hidden;
+}
+
+.button-effect::after {
+  content: "";
+  transition: 0.5s ease-in-out;
+  transform: scale(0);
+  background-color: #ff9800;
+
+  transform-origin: left center; 
+  transform: scaleX(0);         
+  transition: transform 0.4s ease-out; 
+  z-index: -1; 
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.button-effect:hover::after {
+  transform: scale(1);
+} */
+
+.button-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-effect::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: left center;
+  background-color: var(--main-color);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.button-effect:hover::after {
+  transform: translateX(0);
+}
+
+.button-effect:focus {
+  outline: none;
+  box-shadow: 2px 2px 0px var(--main-color);
+  /* filter: drop-shadow(2px 2px 0px var(--main-color)); */
+}
+
+.button-effect:focus-visible {
+  box-shadow: 2px 2px 0px var(--main-color);
+  transition: 0.3s ease;
+}
+
 .button__text {
   font-family: var(--font-press), sans-serif;
   font-style: normal;
@@ -189,7 +366,13 @@
   font-size: 14px;
   line-height: 90%;
   /* identical to box height, or 13px */
-  color: var(--main-color);
+  /* color: var(--main-color); */
+
+  color: var(--changing-color);
+  position: relative;
+  z-index: 2;
+  mix-blend-mode: difference;
+  /* transition: color 0.3s easy; */
 }
 
 .block_button-save {
@@ -212,9 +395,19 @@
   /* max-block-size: 55px; */
 }
 
+/* .button-save svg {
+  fill: currentColor;
+
+  z-index: 2;
+  mix-blend-mode: difference;
+} */
+
 .discett-save {
   width: 21px;
   height: 21px;
+  position: relative;
+  z-index: 2;
+  mix-blend-mode: difference;
 }
 
 .dialog {
@@ -247,6 +440,12 @@
   height: 39px;
 }
 
+/* .button svg {
+  position: relative;
+  z-index: 2;
+  mix-blend-mode: difference;
+} */
+
 .dialog-text {
   padding-left: 20px;
   font-family: var(--font-press), sans-serif;
@@ -255,9 +454,21 @@
   font-size: 14px;
   line-height: 150%;
   /* or 21px */
-  color: var(--main-color);
+  /* color: var(--main-color); */
   text-transform: uppercase;
+
+  color: var(--changing-color);
+  position: relative;
+  z-index: 2;
+  mix-blend-mode: difference;
+  /* transition: color 0.3s easy; */
 }
+
+/* .discett-dialog {
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
+} */
 
 .button__dialog {
   grid-column: 1/-1;
@@ -277,8 +488,13 @@
   font-size: 14px;
   line-height: 90%;
   /* identical to box height, or 13px */
-  color: var(--main-color);
+  /* color: var(--main-color); */
+  color: var(--changing-color);
   text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+  mix-blend-mode: difference;
+  /* transition: color 0.3s easy; */
 }
 
 @media (width <= 375px) {
