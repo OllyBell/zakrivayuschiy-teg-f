@@ -202,14 +202,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* gap: 12px; */
+  gap: 7px;
 }
 
 .card__icon-button {
   background-color: transparent;
   border: 2px solid transparent;
   transition: border 0.3s ease;
-  /* max-block-size: 38px; */
+  max-block-size: 38px;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
