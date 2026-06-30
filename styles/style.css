@@ -109,6 +109,9 @@
 
 .conteiner_img-text {
   position: relative;
+  /*можно добавить следующие 2 строчки, из видео объяснения*/
+  /*overflow: hidden /*предотвращает выход содержимого за границы контейнера когда мы применяем фильтр*/;
+  aspect-ratio: 1/1; /*обеспечивает квадратную форму контейнера не звисимо от размера экрана*/ */
 }
 
 .article_decoration {
@@ -183,7 +186,6 @@
   border: 2px solid var(--main-color);
   background-color: var(--bakground-color);
   padding: 24px;
-
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -428,6 +430,7 @@
   display: grid;
 }
 
+/*можно было по другому .dialog[open]::backdrop*/
 .dialog::backdrop {
   /* background-color: rgb(0 0 0 / 0.3);
   backdrop-filter: blur(7px); */
@@ -437,7 +440,7 @@
 
 .dialog_content {
   display: grid;
-  grid-template-columns: 39px 1fr;
+  grid-template-columns: 39px 1fr; /*можно вместо 39px написать min-content чтоб иконка занимала минимальное пространство, а текст все остальное*/
   align-items: center;
 }
 
